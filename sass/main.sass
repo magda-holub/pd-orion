@@ -1,0 +1,438 @@
+@import ../sass/partials/mixins
+@import ../sass/partials/colors
+@import ../sass/partials/type
+@import ../sass/partials/switcher
+@import ../sass/partials/reset
+@import ../sass/partials/swiper
+@import ../sass/partials/carousel
+
+#celek
+    .pp
+        &Container
+            @include flexVert
+            gap: 48px
+            padding-bottom: 76px
+
+        &Header
+            width: 100%
+            background-color: $spaceCadet
+
+            img
+                margin: 65px auto
+
+        &Intro
+            @include section(0, 137, 0, 137)
+            text-align: center
+
+            p.ppText__M
+                margin-top: 24px
+
+        &Overlay
+            &--image
+                width: 60%
+                
+                img
+                    border-radius: 4px
+                
+            &--container
+                position: relative
+                width: 100%
+                padding-top: 100%
+
+            &--content
+                position: absolute
+                top: 0
+                left: 0
+                @include flexVert
+                justify-content: center
+                height: 100%
+                width: 100%
+                align-items: center
+                gap: 24px
+
+            &--caption
+                background-color: $eggshell
+                border-radius: 4px
+                width: 50%
+                padding: 64px
+                z-index: 5
+                
+                .ppOverlay--content
+                    align-items: flex-start
+
+            &--row
+
+                &__left
+                    position: relative
+
+                    .ppOverlay--caption
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-50%)
+                        right: 0
+
+                &__right
+                    position: relative
+
+                    .ppOverlay--caption
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-50%)
+                        left: 0
+
+                    .ppOverlay--image
+                        margin-left: 40%
+
+        &Desc
+            @include section(0, 137, 0, 137)
+            @include flexVert
+            gap: 48px
+
+        &Features
+            @include section(48, 137, 48, 137)
+            @include flexVert
+            gap: 48px
+            background-color: $eggshell
+
+            .ppOverlay--caption
+                background-color: $white
+
+        &List
+            list-style-type: none
+                
+            &--item
+                margin-top: 8px
+                position: relative
+
+                p.ppText__S
+                    margin-left: 24px
+
+            &--marker
+                background-color: $crayola
+                width: 6px
+                height: 6px
+                border-radius: 50%
+                position: absolute
+                top: 8px
+
+        &Acc
+            @include flexVert
+            gap: 48px
+
+            p.ppHdl__3
+                text-align: center
+                margin-left: 24px
+                margin-right: 24px
+
+            &--row
+                @include section(0, 137, 0, 137)
+                @include flexOr
+                gap: 96px
+                align-items: stretch
+                justify-content: center
+
+                >*
+                    flex-basis: calc((100% - 96px) / 2)
+
+            &--image
+                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
+
+                img
+                    margin: auto
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    right: 0
+                    left: 0
+                    max-height: 100%
+
+            &--caption
+                background-color: $eggshell
+                border-radius: 4px
+                padding: 64px
+                @include flexVert
+                justify-content: center
+
+            .ppList
+                margin-top: unset
+
+                &--marker
+                    background-color: $spaceCadet
+
+            &--carousel
+                @include section(0, 129, 0, 129)
+
+        &Switch
+            @include section(65, 65, 65, 65)
+            background-color: $grey3
+            display: none
+
+            p.ppText__M
+                text-align: center
+                margin-bottom: 24px
+            
+            &--container
+                @include flexOr
+                flex-wrap: wrap
+                gap: 24px
+
+            &--card
+                width: calc((100% - (24px * 4)) / 5)
+                border-radius: 4px
+                background: white
+                box-shadow: 0 2px 6px 0px rgba(0,0,0,0.1)
+                @include flexVert
+                justify-content: center
+                align-items: center
+
+                img
+                    border-radius: 28px
+                    padding: 24px
+                    max-height: 205px
+                    margin: auto
+
+            &--submit
+                background-color: $spaceCadet
+                cursor: pointer
+                margin: 48px auto 24px auto
+                width: 250px
+                text-align: center
+                padding: 16px
+                border-radius: 4px
+                transition: background-color 300ms, box-shadow 300ms
+                box-shadow: 0 2px 6px 0px rgba(0,0,0,0.1)
+
+                &:hover
+                    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.2)
+                    background-color: lighten($spaceCadet, 10%)
+
+                p.ppText__M
+                    margin-bottom: 0
+                    color: white
+
+        &Static
+            @include flexVert
+            gap: 48px
+
+            p.ppHdl__3
+                text-align: center
+
+            &--row
+                @include section(0, 137, 0, 137)
+                @include flexOr
+                gap: 48px
+                align-items: stretch
+                justify-content: center
+
+                >*
+                    flex-basis: calc((100% - 48px) / 2)
+
+            &--image
+                align-self: center
+                flex-basis: calc( (100% - 20px) / 2 )
+                border-radius: 4px
+                background: white
+                box-shadow: 0 2px 6px 0px rgba(0,0,0,0.1)
+                @include flexVert
+                justify-content: center
+                align-items: center
+                position: relative
+                height: 0
+                padding-top: 50%
+
+                &--wrapper
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+
+                img
+                    border-radius: 28px
+                    padding: 24px
+                    max-height: 210px
+                    margin: auto
+
+                &--container
+                    display: flex
+                    gap: 20px
+                    flex-wrap: wrap
+                    justify-content: center
+                    align-items: center
+                    align-self: center
+
+                &--single
+                    align-self: center
+
+                    img
+                        border-radius: 4px
+                        margin: auto
+
+            &--caption
+                background-color: $eggshell
+                border-radius: 4px
+                padding: 64px
+                @include flexVert
+                justify-content: center
+                min-height: 400px
+
+            .ppList
+                margin-top: unset
+
+                &--marker
+                    background-color: $spaceCadet
+
+
+#legend #celek .ppSwitch
+    display: block
+
+.layout-0 #celek
+    .pp
+        &Intro, &Desc, &Features, &Acc--row, &Static--row
+            padding-left: 65px
+            padding-right: 65px
+
+        &List--item
+            margin-top: 4px
+
+        &Overlay--caption, &Acc--caption, &Static--caption
+            padding: 48px
+
+        &Acc, &Static
+            gap: 48px
+
+            >*
+                flex-basis: calc((100% - 48px) / 2)
+        
+@media only screen and (max-width: 975px)
+    .mobile #celek,
+    .mobileapp #celek
+        .pp
+            &Container
+                gap: 32px
+                padding-bottom: 72px
+
+            &Intro, &Desc, &Features, &Acc--row, &Static--row
+                padding-left: 65px
+                padding-right: 65px
+
+            &Features
+                padding-top: 32px
+                padding-bottom: 32px
+
+            &List--item
+                margin-top: 4px
+
+            &Overlay--caption, &Acc--caption, &Static--caption
+                padding: 32px
+
+            &Acc, &Static
+                gap: 32px
+
+                &--row
+                    gap: 32px
+
+                    >*
+                        flex-basis: calc((100% - 32px) / 2)
+
+@media only screen and (max-width: 900px)
+    .mobile #celek,
+    .mobileapp #celek
+        .pp
+            &Intro, &Desc, &Features, &Acc--row, &Static--row
+                padding-left: 24px
+                padding-right: 24px
+
+            &List--item
+                margin-top: 4px
+
+@media only screen and (max-width: 800px)
+    .mobile #celek,
+    .mobileapp #celek
+        .pp
+            &Desc
+                gap: 24px
+
+            &Overlay
+                &--image
+                    width: 100%
+                    
+                    img
+                        border-radius: 4px
+
+                &--caption
+                    width: 100%
+                    order: 1
+
+                &--container
+                    padding-top: 0
+
+                &--content
+                    position: static
+
+                &--row
+
+                    &__left, &__right
+                        position: relative
+                        @include flexVert
+                        gap: 24px
+
+                        .ppOverlay--caption
+                            position: static
+                            transform: unset
+
+                    &__right
+                        .ppOverlay--image
+                            margin-left: unset
+
+            &Features
+                gap: 24px
+
+            &Acc
+                &--image
+                    display: none
+
+                &--caption
+                    flex-basis: 100%
+
+            &Static
+                &--row
+                    display: block
+                    gap: 24px
+
+                    &:nth-of-type(1) .ppStatic--image--container
+                        margin-bottom: 24px
+
+
+                    &:nth-of-type(2) .ppStatic--image--single
+                        margin-bottom: 24px
+
+                &--caption
+                    min-height: unset
+
+                &--image--container
+                    align-self: unset
+
+                &--image--single img
+                    width: 100%
+
+@media only screen and (max-width: 440px)
+    .mobile #celek,
+    .mobileapp #celek
+        .pp
+            &Container
+                gap: 24px
+                padding-bottom: 24px
+                
+            &Acc, &Static
+                gap: 24px
+
+            &Overlay--caption, &Acc--caption, &Static--caption
+                    padding: 24px
+
+            &Features
+                padding-top: 24px
+                padding-bottom: 24px
+
+
