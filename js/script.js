@@ -1,3 +1,47 @@
+var slides = Array.from(document.getElementsByClassName('swiper-slide')),
+    detail = document.querySelector('#swiperDetail img'),
+    details = Array.from(document.getElementsByClassName('ppDetail')),
+    switchCards = Array.from(document.getElementsByClassName('ppSwitch__card')),
+    switchButton = document.getElementById('switchSubmit'),
+    swiperWrapper = document.getElementById('swiper-wrapper');
+
+function zoomSlide() {
+    slides.forEach(function(slide) {
+        slide.addEventListener('click', function changeDetail() {
+            detail.src = slide.querySelector('img').src;
+        })
+    });
+}; zoomSlide();
+
+function fixedHeight(group) {
+    group.forEach(function(item) {
+        var itemCaption = item.nextElementSibling,
+            itemImage = item.querySelector('img');
+
+        itemImage.style.maxHeight = itemCaption.clientHeight + 'px';
+    })
+}; fixedHeight(details)
+
+function loadSlides() {
+    switchButton.addEventListener('click', function uploadSlides() {
+        swiperWrapper.innerHTML = '';
+            switchCards.forEach(function(card) {
+            
+            var newSlide = document.createElement('div');
+            newSlide.classList.add('swiper-slide');
+            newSlide.innerHTML = '<figure><div data-act="img"><img></div></figure>';
+    
+            var newImage = newSlide.querySelector('img');
+            newImage.src = card.querySelector('img').src;
+    
+            swiperWrapper.appendChild(newSlide);
+        })
+    });
+
+}; loadSlides();
+
+
+
 /*
  * Swiper 8.0.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -10452,41 +10496,3 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
   },
 });
-
-$(document).ready(function () {
-    $("#h1cc").insertAfter("#categoryUpperDescription"),
-        $("#h1cc").insertAfter("#categoryUpperDescription");
-});
-
-var slides = Array.from(document.getElementsByClassName('swiper-slide')),
-    detail = document.querySelector('#swiperDetail img'),
-    details = Array.from(document.getElementsByClassName('ppDetail')),
-    switchCards = Array.from(document.getElementsByClassName('ppSwitch--card')),
-    switchButton = document.getElementById('switchSubmit'),
-    swiperWrapper = document.getElementById('swiper-wrapper');
-
-function zoomSlide() {
-    slides.forEach(function(slide) {
-        slide.addEventListener('click', function changeDetail() {
-            detail.src = slide.querySelector('img').src;
-        })
-    });
-}; zoomSlide();
-
-function loadSlides() {
-    switchButton.addEventListener('click', function uploadSlides() {
-        swiperWrapper.innerHTML = '';
-            switchCards.forEach(function(card) {
-            
-            var newSlide = document.createElement('div');
-            newSlide.classList.add('swiper-slide');
-            newSlide.innerHTML = '<figure><div data-act="img"><img></div></figure>';
-    
-            var newImage = newSlide.querySelector('img');
-            newImage.src = card.querySelector('img').src;
-    
-            swiperWrapper.appendChild(newSlide);
-        })
-    });
-
-}; loadSlides();
