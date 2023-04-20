@@ -24,22 +24,22 @@
             @include section(0, 137, 0, 137)
             text-align: center
 
-            p.ppText__M
+            p.ppText--M
                 margin-top: 24px
 
         &Overlay
-            &--image
+            &__image
                 width: 60%
                 
                 img
                     border-radius: 4px
                 
-            &--container
+            &__container
                 position: relative
                 width: 100%
                 padding-top: 100%
 
-            &--content
+            &__content
                 position: absolute
                 top: 0
                 left: 0
@@ -50,37 +50,37 @@
                 align-items: center
                 gap: 24px
 
-            &--caption
+            &__caption
                 background-color: $eggshell
                 border-radius: 4px
                 width: 50%
                 padding: 64px
                 z-index: 5
                 
-                .ppOverlay--content
+                .ppOverlay__content
                     align-items: flex-start
 
-            &--row
+            &__row
 
-                &__left
+                &--left
                     position: relative
 
-                    .ppOverlay--caption
+                    .ppOverlay__caption
                         position: absolute
                         top: 50%
                         transform: translateY(-50%)
                         right: 0
 
-                &__right
+                &--right
                     position: relative
 
-                    .ppOverlay--caption
+                    .ppOverlay__caption
                         position: absolute
                         top: 50%
                         transform: translateY(-50%)
                         left: 0
 
-                    .ppOverlay--image
+                    .ppOverlay__image
                         margin-left: 40%
 
         &Desc
@@ -94,20 +94,20 @@
             gap: 48px
             background-color: $eggshell
 
-            .ppOverlay--caption
+            .ppOverlay__caption
                 background-color: $white
 
         &List
             list-style-type: none
                 
-            &--item
+            &__item
                 margin-top: 8px
                 position: relative
 
-                p.ppText__S
+                p.ppText--S
                     margin-left: 24px
 
-            &--marker
+            &__marker
                 background-color: $crayola
                 width: 6px
                 height: 6px
@@ -119,12 +119,12 @@
             @include flexVert
             gap: 48px
 
-            p.ppHdl__3
+            p.ppHdl--3
                 text-align: center
                 margin-left: 24px
                 margin-right: 24px
 
-            &--row
+            &__row
                 @include section(0, 137, 0, 137)
                 @include flexOr
                 gap: 96px
@@ -134,7 +134,7 @@
                 >*
                     flex-basis: calc((100% - 96px) / 2)
 
-            &--image
+            &__image
                 position: relative
                 display: flex
                 justify-content: center
@@ -149,7 +149,7 @@
                     left: 0
                     max-height: 100%
 
-            &--caption
+            &__caption
                 background-color: $eggshell
                 border-radius: 4px
                 padding: 64px
@@ -159,10 +159,10 @@
             .ppList
                 margin-top: unset
 
-                &--marker
+                &__marker
                     background-color: $spaceCadet
 
-            &--carousel
+            &__carousel
                 @include section(0, 129, 0, 129)
 
         &Switch
@@ -170,16 +170,16 @@
             background-color: $grey3
             display: none
 
-            p.ppText__M
+            p.ppText--M
                 text-align: center
                 margin-bottom: 24px
             
-            &--container
+            &__container
                 @include flexOr
                 flex-wrap: wrap
                 gap: 24px
 
-            &--card
+            &__card
                 width: calc((100% - (24px * 4)) / 5)
                 border-radius: 4px
                 background: white
@@ -194,7 +194,7 @@
                     max-height: 205px
                     margin: auto
 
-            &--submit
+            &__submit
                 background-color: $spaceCadet
                 cursor: pointer
                 margin: 48px auto 24px auto
@@ -209,7 +209,7 @@
                     box-shadow: 0 4px 8px 0px rgba(0,0,0,0.2)
                     background-color: lighten($spaceCadet, 10%)
 
-                p.ppText__M
+                p.ppText--M
                     margin-bottom: 0
                     color: white
 
@@ -217,10 +217,10 @@
             @include flexVert
             gap: 48px
 
-            p.ppHdl__3
+            p.ppHdl--3
                 text-align: center
 
-            &--row
+            &__row
                 @include section(0, 137, 0, 137)
                 @include flexOr
                 gap: 48px
@@ -230,7 +230,7 @@
                 >*
                     flex-basis: calc((100% - 48px) / 2)
 
-            &--image
+            &__image
                 align-self: center
                 flex-basis: calc( (100% - 20px) / 2 )
                 border-radius: 4px
@@ -243,7 +243,7 @@
                 height: 0
                 padding-top: 50%
 
-                &--wrapper
+                &__wrapper
                     position: absolute
                     top: 50%
                     transform: translateY(-50%)
@@ -254,7 +254,7 @@
                     max-height: 210px
                     margin: auto
 
-                &--container
+                &__container
                     display: flex
                     gap: 20px
                     flex-wrap: wrap
@@ -262,14 +262,14 @@
                     align-items: center
                     align-self: center
 
-                &--single
+                &__single
                     align-self: center
 
                     img
                         border-radius: 4px
                         margin: auto
 
-            &--caption
+            &__caption
                 background-color: $eggshell
                 border-radius: 4px
                 padding: 64px
@@ -280,7 +280,7 @@
             .ppList
                 margin-top: unset
 
-                &--marker
+                &__marker
                     background-color: $spaceCadet
 
 
@@ -289,14 +289,14 @@
 
 .layout-0 #celek
     .pp
-        &Intro, &Desc, &Features, &Acc--row, &Static--row
+        &Intro, &Desc, &Features, &Acc__row, &Static__row
             padding-left: 65px
             padding-right: 65px
 
-        &List--item
+        &List__item
             margin-top: 4px
 
-        &Overlay--caption, &Acc--caption, &Static--caption
+        &Overlay__caption, &Acc__caption, &Static__caption
             padding: 48px
 
         &Acc, &Static
@@ -313,7 +313,7 @@
                 gap: 32px
                 padding-bottom: 72px
 
-            &Intro, &Desc, &Features, &Acc--row, &Static--row
+            &Intro, &Desc, &Features, &Acc__row, &Static__row
                 padding-left: 65px
                 padding-right: 65px
 
@@ -321,16 +321,16 @@
                 padding-top: 32px
                 padding-bottom: 32px
 
-            &List--item
+            &List__item
                 margin-top: 4px
 
-            &Overlay--caption, &Acc--caption, &Static--caption
+            &Overlay__caption, &Acc__caption, &Static__caption
                 padding: 32px
 
             &Acc, &Static
                 gap: 32px
 
-                &--row
+                &__row
                     gap: 32px
 
                     >*
@@ -340,11 +340,11 @@
     .mobile #celek,
     .mobileapp #celek
         .pp
-            &Intro, &Desc, &Features, &Acc--row, &Static--row
+            &Intro, &Desc, &Features, &Acc__row, &Static__row
                 padding-left: 24px
                 padding-right: 24px
 
-            &List--item
+            &List__item
                 margin-top: 4px
 
 @media only screen and (max-width: 800px)
@@ -355,66 +355,66 @@
                 gap: 24px
 
             &Overlay
-                &--image
+                &__image
                     width: 100%
                     
                     img
                         border-radius: 4px
 
-                &--caption
+                &__caption
                     width: 100%
                     order: 1
 
-                &--container
+                &__container
                     padding-top: 0
 
-                &--content
+                &__content
                     position: static
 
-                &--row
+                &__row
 
-                    &__left, &__right
+                    &--left, &--right
                         position: relative
                         @include flexVert
                         gap: 24px
 
-                        .ppOverlay--caption
+                        .ppOverlay__caption
                             position: static
                             transform: unset
 
-                    &__right
-                        .ppOverlay--image
+                    &--right
+                        .ppOverlay__image
                             margin-left: unset
 
             &Features
                 gap: 24px
 
             &Acc
-                &--image
+                &__image
                     display: none
 
-                &--caption
+                &__caption
                     flex-basis: 100%
 
             &Static
-                &--row
+                &__row
                     display: block
                     gap: 24px
 
-                    &:nth-of-type(1) .ppStatic--image--container
+                    &:nth-of-type(1) .ppStatic__image__container
                         margin-bottom: 24px
 
 
-                    &:nth-of-type(2) .ppStatic--image--single
+                    &:nth-of-type(2) .ppStatic__image__single
                         margin-bottom: 24px
 
-                &--caption
+                &__caption
                     min-height: unset
 
-                &--image--container
+                &__image__container
                     align-self: unset
 
-                &--image--single img
+                &__image__single img
                     width: 100%
 
 @media only screen and (max-width: 440px)
@@ -428,7 +428,7 @@
             &Acc, &Static
                 gap: 24px
 
-            &Overlay--caption, &Acc--caption, &Static--caption
+            &Overlay__caption, &Acc__caption, &Static__caption
                     padding: 24px
 
             &Features
